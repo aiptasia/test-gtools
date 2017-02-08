@@ -1,7 +1,7 @@
 const MODULE_NAME = 'gt.main.activity';
 
 let component = {
-    template: '{{$ctrl.data}}',
+    template: require('./main-activity.component.pug'),
     bindings: {
     },
     controller: function() {
