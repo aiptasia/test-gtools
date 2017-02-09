@@ -1,0 +1,24 @@
+.form-group
+  .gt-user-selector__label
+    label Список найденных пользователей
+  .gt-user-selector__dropdown
+    .btn-group
+      button.btn.btn-default.btn-dropdown(
+        ng-class="{disabled: !$ctrl.activeUser}",
+        type='button'
+      )
+        span {{$ctrl.activeUser ? $ctrl.activeUser.login : 'Нет данных'}}
+      button.btn.btn-default.dropdown-toggle(
+        ng-class="{disabled: !$ctrl.activeUser}",
+        type='button',
+        data-toggle='dropdown'
+      )
+        span.caret
+        span.sr-only Toggle Dropdown
+      ul.dropdown-menu
+        li(
+          ng-repeat="user in $ctrl.users",
+          ng-click="$ctrl.onUserSelect(user)",
+          value="{{user.login}}"
+        )
+          a(href='#') {{user.login}}

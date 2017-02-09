@@ -1,0 +1,20 @@
+.panel.panel-default
+  .panel-heading.container-fluid
+    h3.panel-title.col-xs-12 Информация о проекте
+  .panel-body
+    .col-xs-12
+      .list-group(ng-if="$ctrl.project")
+        .list-group-item
+          h4.list-group-item-heading Полное имя проекта
+          p.list-group-item-text {{$ctrl.project.full_name || $ctrl.placeholder}}
+        .list-group-item
+          h4.list-group-item-heading Описание
+          p.list-group-item-text {{$ctrl.project.description || $ctrl.placeholder}}
+        .list-group-item
+          h4.list-group-item-heading Ветка по умолчанию
+          p.list-group-item-text {{$ctrl.project.default_branch || $ctrl.placeholder}}
+        .list-group-item
+          h4.list-group-item-heading Язык программирования
+          p.list-group-item-text {{$ctrl.project.language || $ctrl.placeholder}}
+    .col-xs-12(ng-if="!$ctrl.project")
+      span Проект не выбран

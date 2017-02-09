@@ -1,0 +1,24 @@
+.form-group
+  .gt-project-selector__label
+    label Проекты пользователя
+  .gt-project-selector__dropdown
+    .btn-group
+      button.btn.btn-default.btn-dropdown(
+        ng-class="{disabled: !$ctrl.activeProject}",
+        type='button'
+      )
+        span {{$ctrl.activeProject ? $ctrl.activeProject.name: 'Нет данных'}}
+      button.btn.btn-default.dropdown-toggle(
+        ng-class="{disabled: !$ctrl.activeProject}",
+        type='button',
+        data-toggle='dropdown'
+      )
+        span.caret
+        span.sr-only Toggle Dropdown
+      ul.dropdown-menu
+        li(
+          ng-repeat="project in $ctrl.projects",
+          ng-click="$ctrl.onProjectSelect(project)",
+          value="{{project.name}}"
+        )
+          a(href='#') {{project.name}}

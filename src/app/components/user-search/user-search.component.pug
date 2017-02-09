@@ -1,0 +1,6 @@
+.form-group
+  label Поиск пользователей GitHub
+  input.form-control(
+    placeholder="Введите строку поиска...",
+    ng-model="$ctrl.search",
+    ng-keyup="$ctrl.onKeyUp()")
