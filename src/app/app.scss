@@ -1,0 +1,32 @@
+// Override Bootstrap styles
+
+$control-width: 200px;
+
+.dropdown-menu {
+  width: $control-width;
+
+  li > a {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.form-control {
+  width: $control-width;
+}
+
+.list-group-item {
+  border: none;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 0;
+}
+
+// Addition styles for Bootstrap controls
+
+.btn-dropdown {
+  overflow: hidden;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: $control-width;
+}
