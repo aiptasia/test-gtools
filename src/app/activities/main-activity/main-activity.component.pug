@@ -1,1 +1,22 @@
-|{{$ctrl.data}}
+.panel(ng-class="{'panel-default': !$ctrl.error, 'panel-danger': $ctrl.error}")
+  .panel-heading(ng-if="$ctrl.error")
+    h3.panel-title {{$ctrl.error}}
+  .panel-body
+    .col-xs-12
+      gt-user-search(
+        on-user-search="$ctrl.onUserSearch(search)")
+
+    .col-xs-12.col-md-6
+      gt-user-selector(
+        users="$ctrl.users",
+        active-user="$ctrl.activeUser",
+        on-select="$ctrl.onUserSelect(user)")
+
+    .col-xs-12.col-md-6
+      gt-project-selector(
+        projects="$ctrl.projects",
+        active-project="$ctrl.activeProject",
+        on-select="$ctrl.onProjectSelect(project)")
+
+gt-project-info(
+  project="$ctrl.activeProject")
